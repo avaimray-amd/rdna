@@ -1,0 +1,9 @@
+[submodule "GpuKernelLab"]
+	path = GpuKernelLab
+	url = git@github.com:AMD-CG-AIM/GpuKernelLab.git
+[submodule "llvm-project"]
+	path = llvm-project
+	url = git@github.com:AMD-Lightning-Internal/llvm-project.git
+[submodule "PyGpuDirect"]
+	path = PyGpuDirect
+	url = git@github.com:AMD-CG-AIM/PyGpuDirect.git

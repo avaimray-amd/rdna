@@ -1,0 +1,55 @@
+{
+    "createdUtc":  "2026-09-22T08:42:59.3516704Z",
+    "repositories":  [
+                         {
+                             "path":  "GpuKernelLab",
+                             "commit":  "6d75f6fa9fa35323ae6c3c921f6fec1ee89860e9",
+                             "origin":  "git@github.com:AMD-CG-AIM/GpuKernelLab.git"
+                         },
+                         {
+                             "path":  "llvm-project",
+                             "commit":  "f8dbab6a14a9b81f277f327c647ba1451b275b20",
+                             "origin":  "git@github.com:AMD-Lightning-Internal/llvm-project.git"
+                         },
+                         {
+                             "path":  "PyGpuDirect",
+                             "commit":  "75af085ee8ea4b1ffce40a62d0a3ebc8142fa3f5",
+                             "origin":  "git@github.com:AMD-CG-AIM/PyGpuDirect.git"
+                         }
+                     ],
+    "overlay":  [
+                    {
+                        "source":  "Overlay/GpuKernelLab/Experiments/HIP/Rasteriser/Kernels/rasteriser_pipeline.cpp",
+                        "target":  "GpuKernelLab/Experiments/HIP/Rasteriser/Kernels/rasteriser_pipeline.cpp",
+                        "sha256":  "6A5404ADDE43BFC7830E115CADD429E5713C605EEB77200A088BEF05D61A39E1",
+                        "baseBlob":  "8e77b5fee1350a731e81d513d807d333a0d05610"
+                    },
+                    {
+                        "source":  "Overlay/GpuKernelLab/Experiments/HIP/Rasteriser/RASTERISER_PIPELINE.md",
+                        "target":  "GpuKernelLab/Experiments/HIP/Rasteriser/RASTERISER_PIPELINE.md",
+                        "sha256":  "F4958BC4BC26816CF67969170F5F64A814AA61DF127E20C942A211BCC9991600",
+                        "baseBlob":  "5911889d507dd178280384e3c76321953b9cee73"
+                    },
+                    {
+                        "source":  "Overlay/GpuKernelLab/Experiments/HIP/Rasteriser/rasteriser_pipeline.py",
+                        "target":  "GpuKernelLab/Experiments/HIP/Rasteriser/rasteriser_pipeline.py",
+                        "sha256":  "C571361C166AE61DF9864C48DEC39EA73569E7006CC79C16D024EA1B98CD1D92",
+                        "baseBlob":  "76f38eb8631cf21b8ed09dec719b987331404c97"
+                    },
+                    {
+                        "source":  "Overlay/GpuKernelLab/Experiments/HIP/Rasteriser/run_pipeline_model.py",
+                        "target":  "GpuKernelLab/Experiments/HIP/Rasteriser/run_pipeline_model.py",
+                        "sha256":  "CFBFCEE89D01F44E09C9FAB8819BB92A1B9731209E5DB79FD29EB2D76FFD49A6",
+                        "baseBlob":  "b9bc9cec32289fa72f45579afccc2a7c9514b600"
+                    }
+                ],
+    "magnusArchive":  {
+                          "path":  "Sources/one_model-magnus-13.0.8982267.21415-src.tgz",
+                          "sha256":  "8FE8FDBB6B8E574A263D04089F81F577FE7084E572A099F0DBDC0A25958FCABE",
+                          "bytes":  90725780
+                      },
+    "sourceBundle":  {
+                         "sha256":  "43D4843DF2763F69C806D6172940F90B7605DCB7AE3393D63FFB47046D5E878C",
+                         "path":  "Sources/GpuKernelLab.bundle"
+                     }
+}

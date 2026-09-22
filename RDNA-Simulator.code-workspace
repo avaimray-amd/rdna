@@ -1,0 +1,9 @@
+{
+    "folders": [
+        { "path": ".", "name": "SimulatorSetup" },
+        { "path": "GpuKernelLab" },
+        { "path": "llvm-project" },
+        { "path": "PyGpuDirect" },
+        { "path": "one_model-magnus-13.0.8982267.21415-src" }
+    ]
+}

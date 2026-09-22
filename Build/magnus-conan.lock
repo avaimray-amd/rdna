@@ -1,0 +1,264 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "options": "force_no_optimization=False\ninstall_deps=False\nmodel=TB_ONE_MODEL\ntracy_enable=False\nboost:asio_no_deprecated=False\nboost:buildid=None\nboost:bzip2=True\nboost:debug_level=0\nboost:diagnostic_definitions=False\nboost:error_code_header_only=False\nboost:extra_b2_flags=None\nboost:filesystem_no_deprecated=False\nboost:header_only=False\nboost:i18n_backend=deprecated\nboost:i18n_backend_iconv=off\nboost:i18n_backend_icu=False\nboost:layout=system\nboost:lzma=False\nboost:magic_autolink=False\nboost:multithreading=True\nboost:namespace=boost\nboost:namespace_alias=False\nboost:numa=True\nboost:pch=True\nboost:python_executable=None\nboost:python_version=None\nboost:segmented_stacks=False\nboost:shared=False\nboost:system_no_deprecated=False\nboost:system_use_utf8=False\nboost:visibility=hidden\nboost:without_atomic=False\nboost:without_chrono=False\nboost:without_container=False\nboost:without_context=False\nboost:without_contract=False\nboost:without_coroutine=False\nboost:without_date_time=False\nboost:without_exception=False\nboost:without_fiber=False\nboost:without_filesystem=False\nboost:without_graph=False\nboost:without_graph_parallel=True\nboost:without_iostreams=False\nboost:without_locale=False\nboost:without_log=False\nboost:without_math=False\nboost:without_mpi=True\nboost:without_program_options=False\nboost:without_python=True\nboost:without_random=False\nboost:without_regex=False\nboost:without_serialization=False\nboost:without_stacktrace=False\nboost:without_system=False\nboost:without_test=False\nboost:without_thread=False\nboost:without_timer=False\nboost:without_type_erasure=False\nboost:without_wave=False\nboost:zlib=True\nboost:zstd=False\nbzip2:build_executable=True\nbzip2:shared=False\ndlfcn-win32:shared=False\nfmt:header_only=False\nfmt:shared=False\nfmt:with_fmt_alias=False\nfmt:with_os_api=True\ngtest:build_gmock=True\ngtest:disable_pthreads=False\ngtest:hide_symbols=False\ngtest:no_main=False\ngtest:shared=False\nhashtable:shared=False\nlibpng:api_prefix=\nlibpng:shared=False\nlibpng:sse=True\nlibsodium:PIE=False\nlibsodium:shared=False\nlibsodium:use_soname=True\nllvm-core:components=all\nllvm-core:exceptions=True\nllvm-core:expensive_checks=False\nllvm-core:lto=Off\nllvm-core:rtti=True\nllvm-core:shared=False\nllvm-core:static_stdlib=False\nllvm-core:targets=all\nllvm-core:threads=True\nllvm-core:unwind_tables=True\nllvm-core:use_llvm_cmake_files=False\nllvm-core:use_perf=False\nllvm-core:use_sanitizer=None\nllvm-core:with_ffi=False\nllvm-core:with_zlib=True\nopenexr:shared=False\nstb:with_deprecated=True\nsystemc:disable_async_updates=False\nsystemc:disable_copyright_msg=False\nsystemc:disable_virtual_bind=False\nsystemc:enable_assertions=True\nsystemc:enable_immediate_self_notifications=False\nsystemc:enable_phase_callbacks=False\nsystemc:enable_phase_callbacks_tracing=False\nsystemc:shared=False\ntinyxml2:shared=False\ntracy:callstack=False\ntracy:delayed_init=False\ntracy:enable=False\ntracy:fibers=False\ntracy:libbacktrace_elf_dynload_support=False\ntracy:libunwind_backtrace=False\ntracy:manual_lifetime=False\ntracy:no_broadcast=False\ntracy:no_callstack=False\ntracy:no_callstack_inlines=False\ntracy:no_code_transfer=False\ntracy:no_context_switch=False\ntracy:no_crash_handler=False\ntracy:no_exit=False\ntracy:no_frame_image=False\ntracy:no_sampling=False\ntracy:no_system_tracing=False\ntracy:no_verify=False\ntracy:no_vsync_capture=False\ntracy:on_demand=False\ntracy:only_ipv4=False\ntracy:only_localhost=False\ntracy:shared=False\ntracy:symbol_offline_resolve=False\ntracy:timer_fallback=False\ntracy:verbose=False\nzeromq:encryption=libsodium\nzeromq:poller=None\nzeromq:shared=False\nzeromq:with_draft_api=False\nzeromq:with_norm=False\nzeromq:with_radix_tree=False\nzeromq:with_websocket=False\nzlib:shared=False",
+    "requires": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "20",
+     "21",
+     "22"
+    ],
+    "build_requires": [
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29"
+    ],
+    "path": "..\\conanfile.py",
+    "context": "host"
+   },
+   "1": {
+    "ref": "zlib/1.2.11",
+    "options": "shared=False",
+    "package_id": "3fb49604f9c2f729b85ba3115852006824e72cab",
+    "prev": "0",
+    "context": "host"
+   },
+   "2": {
+    "ref": "ac_types/4.2.2@amd/hdk",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "3": {
+    "ref": "hashtable/1.0@amd/hdk",
+    "options": "shared=False",
+    "package_id": "dfa0038e9a228bccd11e6c518b8fd895174eba88",
+    "prev": "0",
+    "context": "host"
+   },
+   "4": {
+    "ref": "systemc/2.3.3",
+    "options": "disable_async_updates=False\ndisable_copyright_msg=False\ndisable_virtual_bind=False\nenable_assertions=True\nenable_immediate_self_notifications=False\nenable_phase_callbacks=False\nenable_phase_callbacks_tracing=False\nshared=False",
+    "package_id": "3aad1b9cb7af38e5ff94256bca286ba9db32ac80",
+    "prev": "0",
+    "context": "host"
+   },
+   "5": {
+    "ref": "openexr/2.5.5",
+    "options": "shared=False\nzlib:shared=False",
+    "package_id": "d140711d95cc16a85766a8fc3a551dfafe84cf63",
+    "prev": "0",
+    "requires": [
+     "1"
+    ],
+    "context": "host"
+   },
+   "6": {
+    "ref": "tinyxml2/8.0.0",
+    "options": "shared=False",
+    "package_id": "3fb49604f9c2f729b85ba3115852006824e72cab",
+    "prev": "0",
+    "context": "host"
+   },
+   "7": {
+    "ref": "toml11/4.0.3",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "8": {
+    "ref": "boost/1.69.0",
+    "options": "asio_no_deprecated=False\nbuildid=None\nbzip2=True\ndebug_level=0\ndiagnostic_definitions=False\nerror_code_header_only=False\nextra_b2_flags=None\nfilesystem_no_deprecated=False\nheader_only=False\ni18n_backend=deprecated\ni18n_backend_iconv=off\ni18n_backend_icu=False\nlayout=system\nlzma=False\nmagic_autolink=False\nmultithreading=True\nnamespace=boost\nnamespace_alias=False\nnuma=True\npch=True\npython_executable=None\npython_version=None\nsegmented_stacks=False\nshared=False\nsystem_no_deprecated=False\nsystem_use_utf8=False\nvisibility=hidden\nwithout_atomic=False\nwithout_chrono=False\nwithout_container=False\nwithout_context=False\nwithout_contract=False\nwithout_coroutine=False\nwithout_date_time=False\nwithout_exception=False\nwithout_fiber=False\nwithout_filesystem=False\nwithout_graph=False\nwithout_graph_parallel=True\nwithout_iostreams=False\nwithout_locale=False\nwithout_log=False\nwithout_math=False\nwithout_mpi=True\nwithout_program_options=False\nwithout_python=True\nwithout_random=False\nwithout_regex=False\nwithout_serialization=False\nwithout_stacktrace=False\nwithout_system=False\nwithout_test=False\nwithout_thread=False\nwithout_timer=False\nwithout_type_erasure=False\nwithout_wave=False\nzlib=True\nzstd=False\nbzip2:build_executable=True\nbzip2:shared=False\nzlib:shared=False",
+    "package_id": "37050c911e5419517ec6e0761c16c6e262b3e2a3",
+    "prev": "0",
+    "requires": [
+     "1",
+     "9"
+    ],
+    "context": "host"
+   },
+   "9": {
+    "ref": "bzip2/1.0.8",
+    "options": "build_executable=True\nshared=False",
+    "package_id": "d16a91eadaaf5829b928b12d2f836ff7680d3df5",
+    "prev": "0",
+    "context": "host"
+   },
+   "10": {
+    "ref": "libpng/1.6.37",
+    "options": "api_prefix=\nshared=False\nsse=True\nzlib:shared=False",
+    "package_id": "6578dc886bddc9acd52cebadfffbc71f52679bb7",
+    "prev": "0",
+    "requires": [
+     "1"
+    ],
+    "context": "host"
+   },
+   "11": {
+    "ref": "llvm-core/11.1.0",
+    "options": "components=all\nexceptions=True\nexpensive_checks=False\nlto=Off\nrtti=True\nshared=False\nstatic_stdlib=False\ntargets=all\nthreads=True\nunwind_tables=True\nuse_llvm_cmake_files=False\nuse_perf=False\nuse_sanitizer=None\nwith_ffi=False\nwith_zlib=True\nzlib:shared=False",
+    "package_id": "98672c9a12fa83c6592650308537d63eab2a7d60",
+    "prev": "0",
+    "requires": [
+     "1"
+    ],
+    "context": "host"
+   },
+   "12": {
+    "ref": "glm/0.9.9.8",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "13": {
+    "ref": "fmt/8.0.1",
+    "options": "header_only=False\nshared=False\nwith_fmt_alias=False\nwith_os_api=True",
+    "package_id": "ace5bdd4e06209960d1b255e2f39d1aaa8749b01",
+    "prev": "0",
+    "context": "host"
+   },
+   "14": {
+    "ref": "stb/cci.20240531",
+    "options": "with_deprecated=True",
+    "package_id": "9d3d9aac798392dbe5b8ddad56d332bc432631ac",
+    "prev": "0",
+    "context": "host"
+   },
+   "15": {
+    "ref": "tracy/0.11.1",
+    "options": "callstack=False\ndelayed_init=False\nenable=False\nfibers=False\nlibbacktrace_elf_dynload_support=False\nlibunwind_backtrace=False\nmanual_lifetime=False\nno_broadcast=False\nno_callstack=False\nno_callstack_inlines=False\nno_code_transfer=False\nno_context_switch=False\nno_crash_handler=False\nno_exit=False\nno_frame_image=False\nno_sampling=False\nno_system_tracing=False\nno_verify=False\nno_vsync_capture=False\non_demand=False\nonly_ipv4=False\nonly_localhost=False\nshared=False\nsymbol_offline_resolve=False\ntimer_fallback=False\nverbose=False",
+    "package_id": "dfa0038e9a228bccd11e6c518b8fd895174eba88",
+    "prev": "0",
+    "context": "host"
+   },
+   "16": {
+    "ref": "dlfcn-win32/1.3.0@amd/hdk",
+    "options": "shared=False",
+    "package_id": "3fb49604f9c2f729b85ba3115852006824e72cab",
+    "prev": "0",
+    "context": "host"
+   },
+   "17": {
+    "ref": "dirent/1.24",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "18": {
+    "ref": "zeromq/4.3.3",
+    "options": "encryption=libsodium\npoller=None\nshared=False\nwith_draft_api=False\nwith_norm=False\nwith_radix_tree=False\nwith_websocket=False\nlibsodium:PIE=False\nlibsodium:shared=False\nlibsodium:use_soname=True",
+    "package_id": "d01371535f7dae3ecb776ca4941c99ad2c31d60e",
+    "prev": "0",
+    "requires": [
+     "19"
+    ],
+    "context": "host"
+   },
+   "19": {
+    "ref": "libsodium/1.0.19",
+    "options": "PIE=False\nshared=False\nuse_soname=True",
+    "package_id": "f753390d5ff5a2ee3d573ab3bd6b1cf446256d93",
+    "prev": "0",
+    "context": "host"
+   },
+   "20": {
+    "ref": "gtest/1.10.0",
+    "options": "build_gmock=True\ndisable_pthreads=False\nhide_symbols=False\nno_main=False\nshared=False",
+    "package_id": "5ad274d83035c78ba2b205e6cf4f1b317aee8e05",
+    "prev": "0",
+    "context": "host"
+   },
+   "21": {
+    "ref": "m4/1.4.18",
+    "options": "",
+    "package_id": "0a420ff5c47119e668867cdb51baff0eca1fdb68",
+    "prev": "0",
+    "context": "host"
+   },
+   "22": {
+    "ref": "exprtk/7135f4ddb12e626d2a355c587d9d7d0d74b6aab3@amd/hdk",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "23": {
+    "ref": "cmake/3.28.1",
+    "options": "",
+    "package_id": "ca33edce272a279b24f87dc0d4cf5bbdcffbc187",
+    "prev": "0",
+    "context": "host"
+   },
+   "24": {
+    "ref": "ninja/1.11.1",
+    "options": "",
+    "package_id": "0a420ff5c47119e668867cdb51baff0eca1fdb68",
+    "prev": "0",
+    "context": "host"
+   },
+   "25": {
+    "ref": "vc/19.28@amd/dk",
+    "options": "",
+    "package_id": "ca33edce272a279b24f87dc0d4cf5bbdcffbc187",
+    "prev": "0",
+    "context": "host"
+   },
+   "26": {
+    "ref": "clang/11.1.0@amd/dk",
+    "options": "",
+    "package_id": "ca33edce272a279b24f87dc0d4cf5bbdcffbc187",
+    "prev": "0",
+    "context": "host"
+   },
+   "27": {
+    "ref": "xxd/1.0@amd/dk",
+    "options": "",
+    "package_id": "ca33edce272a279b24f87dc0d4cf5bbdcffbc187",
+    "prev": "0",
+    "context": "host"
+   },
+   "28": {
+    "ref": "ms_sdk/21322@amd/dk",
+    "options": "",
+    "package_id": "ca33edce272a279b24f87dc0d4cf5bbdcffbc187",
+    "prev": "0",
+    "context": "host"
+   },
+   "29": {
+    "ref": "ms_wdk/21322@amd/dk",
+    "options": "",
+    "package_id": "ca33edce272a279b24f87dc0d4cf5bbdcffbc187",
+    "prev": "0",
+    "context": "host"
+   }
+  },
+  "revisions_enabled": false
+ },
+ "version": "0.4",
+ "profile_host": "[settings]\narch=x86_64\nbuild_type=Release\ncompiler=msvc\ncompiler.cppstd=14\ncompiler.runtime=dynamic\ncompiler.runtime_type=Release\ncompiler.version=192\nos=Windows\nboost*:compiler=Visual Studio\nboost*:compiler.runtime=MD\nboost*:compiler.version=16\n[options]\n[build_requires]\n*: cmake/3.28.1, ninja/1.11.1, vc/19.28@amd/dk, clang/11.1.0@amd/dk, xxd/1.0@amd/dk, ms_sdk/21322@amd/dk, ms_wdk/21322@amd/dk\n[env]\n[conf]\ntools.cmake.cmaketoolchain:generator=Ninja\ntools.microsoft.msbuild:installation_path=\ntools.build:jobs=16\n[buildenv]\nCMAKE_GENERATOR=Ninja\nCMAKE_BUILD_TYPE=Release\n"
+}

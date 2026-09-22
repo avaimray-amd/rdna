@@ -1,0 +1,42 @@
+{
+  "width": 128,
+  "height": 128,
+  "triangles": 8,
+  "seed": 42,
+  "repeats": 1,
+  "enabled_simds": 2,
+  "raster_workgroups": 1,
+  "raster_threads_per_workgroup": 512,
+  "reuse_triangles_per_wave": 10,
+  "reuse_scope": "wave_local",
+  "reuse_storage": "global_memory",
+  "stages": [
+    "reuse_pipeline",
+    "vertex_pipeline",
+    "raster_bin_pipeline",
+    "rasteriser_pipeline",
+    "fragment_pipeline"
+  ],
+  "stage_language": "HIP",
+  "cpu_readback_between_stages": false,
+  "reuse_matches": true,
+  "connectivity_matches": true,
+  "unique_shades": 24,
+  "input_indices": 24,
+  "vertex_dispatch_args": [
+    1,
+    1,
+    1
+  ],
+  "vertex_dispatch_indirect": true,
+  "vertex_matches": true,
+  "coverage_matches_cpu": true,
+  "fragment_matches": true,
+  "covered_pixels": 24,
+  "uncovered_pixels": 16360,
+  "overflow": 0,
+  "queues_drained": true,
+  "image_sha256": "69ae0322e9f8feda71bdad08640793bf8b5b4968ddea34822589eab22e2609c3",
+  "source_sha256": "6a5404adde43bfc7830e115cadd429e5713c605eeb77200a088bef05d61a39e1",
+  "code_sha256": "a6ffffb714d2ceb2291ef1fb11c1660bfd1519e095a83b83f75ebf84685332ef"
+}
