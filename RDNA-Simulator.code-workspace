@@ -1,6 +1,8 @@
 {
     "folders": [
         { "path": ".", "name": "SimulatorSetup" },
+        { "path": "Agent" },
+        { "path": "Docs" },
         { "path": "GpuKernelLab" },
         { "path": "llvm-project" },
         { "path": "PyGpuDirect" },

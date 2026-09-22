@@ -1,0 +1,7 @@
+# Read-only document parsing dependencies.
+# Everything else (docx, pptx, xlsx, vsdx, drawio, svg, emf, wmf, rtf, csv,
+# html, ipynb, gzip, images) is handled with the Python standard library.
+
+olefile>=0.47      # legacy OLE2 containers: .doc .ppt .vsd .msg .mpp
+pypdf>=4.2         # .pdf
+xlrd>=2.0.1        # .xls (xlrd 2.x is .xls only, which is exactly what we want)

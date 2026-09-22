@@ -7,8 +7,9 @@ the kernel to the laptop GPU. The laptop's RDNA 3.5 GPU is not used by this path
 the CPU runs the simulator, and the kernel target remains **gfx1310**.
 
 This replaces the large LFS workspace snapshot for this specific workflow.
-It does NOT migrate the hardware documents, Agent, other profiling tools,
-historical captures, or unrelated experiments' runtime dependencies.
+It includes the Agent documentation toolkit and the complete hardware Docs
+snapshot. Other profiling tools, historical captures, temporary parsed-document
+caches, and unrelated experiments' runtime dependencies are NOT included.
 Do not modify the kernel algorithm, silently change pinned versions, discard
 local work, push to remote, bypass organization policies, or collect secrets.
 
@@ -22,13 +23,22 @@ The source-only branch is **main**. The old full-workspace LFS snapshot was on
 On the source PC this small checkout is at
 `C:/Users/shiny/Desktop/RDNA/SourceMigration/rdna`. Its remote is configured,
 but no push is performed by the preparing agent. The owner must publish its
-main branch before the laptop clone below can work. No prebuilt executable or
+main branch before the laptop clone below can work. Follow PUBLISH_DOCS.md on
+the source PC: Docs is split across several commits so it can be published in
+separate fast-forward pushes below GitHub's 2 GiB-per-push limit. Do not push
+the entire new history in one operation. No prebuilt executable or
 LFS object is included in this source-only repository. If publication is
 rejected, stop; do not force-push or assume the server is empty.
 
 The repository consists of three Git submodules, a 90,725,780-byte original
 Magnus source archive, a roughly 13 MB GpuKernelLab Git bundle, saved source
 edits, build scripts, a Conan dependency lock, and trace-converter Python source.
+Agent adds about 150 KB of source/configuration/tests, with no .cache, .scratch,
+.venv, __pycache__, or bytecode. Sources/Docs adds 57 compressed archive parts
+totaling 5,305,203,778 bytes, each at most 90 MiB. Restoring them produces 10,008
+files totaling 6,901,542,191 bytes. Docs is now the majority of the download;
+this is no longer a roughly 104 MB parent checkout. These archives are ordinary
+Git files, not LFS pointers. Future re-packing can substantially grow history.
 The bundle preserves GpuKernelLab commits not yet available on its remote.
 Submodule repositories require their own authorization, independent of access
 to this parent repository. All content must remain in approved private storage.
@@ -122,6 +132,58 @@ local edits. These files contain the current pipeline fixes and the portable
 `--model-package` runner argument. Rerunning on an unchanged setup is safe.
 The archive is verified by SHA-256:
 `8FE8FDBB6B8E574A263D04089F81F577FE7084E572A099F0DBDC0A25958FCABE`.
+
+### Restore Docs and set up Agent
+
+From C:/RDNA, restore the documentation snapshot and verify every file:
+
+```powershell
+py -3.12 ./Scripts/docs_archive.py restore --archive ./Sources/Docs --destination ./Docs
+py -3.12 ./Scripts/docs_archive.py verify --archive ./Sources/Docs --destination ./Docs
+```
+
+The archive tool uses only Python's standard library. It checks each archive
+part and every restored document against SHA-256 hashes in
+Sources/Docs/manifest.json. It restores into a new folder and refuses to
+overwrite a conflicting existing Docs tree. Rerunning against a matching tree
+verifies it instead. Allow approximately 12.3 GB EXTRA free space during restore
+for the temporary combined archive and extracted files, on top of the cloned
+Git checkout; Git history and working archive parts also take disk space.
+
+This is a read-only snapshot, not a newly configured Perforce workspace. Never
+edit the hardware documents, including to fix parser failures. The extracted
+Docs directory is ignored because Git stores its archive parts instead. The
+original desktop documents were not modified. Parsed caches will be rebuilt
+locally in Agent/.cache and stay ignored.
+
+Create Agent's separate environment explicitly using Python 3.12:
+
+```powershell
+py -3.12 -m venv ./Agent/.venv
+./Agent/.venv/Scripts/python.exe -m pip install -r ./Agent/requirements.txt
+Push-Location ./Agent
+./.venv/Scripts/python.exe -m docparse parsers
+./.venv/Scripts/python.exe ./tests/smoke_mcp.py
+./.venv/Scripts/python.exe ./tests/smoke_mcp.py --docs-root ../Docs
+Pop-Location
+```
+
+Stop on failures before proceeding. The first MCP test is self-contained; the
+second tests the restored Word/Visio SX documents. Alternatively Agent/setup.ps1
+creates its environment and tests parsers, a broader corpus sample, and MCP;
+its default Docs path is the sibling Docs folder. Use `-DocsRoot` for a different
+document location. The short commands above avoid a broad corpus scan on the
+slower laptop.
+
+Open RDNA-Simulator.code-workspace: Agent and Docs are included as roots.
+Agent/.vscode/mcp.json uses `${workspaceFolder:Agent}` for both the Python
+interpreter and server script, so it does not depend on the desktop username.
+Review/trust the workspace as appropriate, then use VS Code's **MCP: List
+Servers** command to start **rdna-docparse** if it is not already started.
+Read Agent/AGENTS.md before document research. Its .github instructions, prompt,
+skill and read-only researcher definition are included; any C:/RDNA examples
+mean the chosen laptop checkout root. This Agent toolkit is optional for running
+the simulator and does not synchronize Copilot conversations or credentials.
 
 ## 5. Configure Conan access to AMD dependencies
 
@@ -265,6 +327,10 @@ only after this baseline is working and the user requests it.
   and existing pinned compiler/model binaries: 150 seconds, 30,627,616-byte
   trace, exact expected image. Build directories/path debug data can change
   code-object hashes; compare semantic validation and image, not only that hash.
+- Agent's self-contained MCP smoke test passed without desktop document paths.
+- All 10,008 documents were restored from the 57 archive parts and each file
+  matched its recorded SHA-256 hash. Multipart round-trip, conflict refusal
+  and path-traversal checks also passed on a small synthetic test.
 
 A complete fresh LLVM/Magnus rebuild and uncached dependency downloads were
 NOT repeated as part of this setup validation. Those remain laptop acceptance

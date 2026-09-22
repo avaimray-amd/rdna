@@ -2,5 +2,9 @@
 /.conanenv/
 /one_model-magnus-13.0.8982267.21415-src/
 /output/
+/Agent/.cache/
+/Agent/.scratch/
+/Agent/.venv/
+/Docs/
 **/__pycache__/
 *.pyc

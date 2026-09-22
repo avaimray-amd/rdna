@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "rdna-docparse": {
+      "type": "stdio",
+      "command": "${workspaceFolder:Agent}/.venv/Scripts/python.exe",
+      "args": [
+        "${workspaceFolder:Agent}/mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}
